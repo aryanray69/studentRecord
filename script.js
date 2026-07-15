@@ -58,7 +58,6 @@ const students = [
 const studentContainer = document.getElementById("studentContainer");
 const search = document.getElementById("search");
 
-// Function to display students
 function displayStudents(studentList) {
 
     studentContainer.innerHTML = studentList.map(student => `
@@ -72,10 +71,8 @@ function displayStudents(studentList) {
 
 }
 
-// Display all students initially
 displayStudents(students);
 
-// Search functionality
 search.addEventListener("input", function () {
 
     const searchValue = this.value.toLowerCase();
