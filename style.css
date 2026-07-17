@@ -2,13 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
+    font-family: Arial, Helvetica, sans-serif;
     padding: 30px;
     background: #f4f4f4;
 }
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loginButton a{
+    color: aqua;
+    background-color: darkblue;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.loginButton a:hover{
+    background-color: violet;
+    cursor: pointer;
+}
+
+
 
 h2{
     margin-bottom: 20px;

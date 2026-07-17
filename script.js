@@ -60,26 +60,36 @@ const search = document.getElementById("search");
 
 function displayStudents(studentList) {
 
-    studentContainer.innerHTML = studentList.map(student => `
-        <div class="card">
-            <h3>${student.name}</h3>
-            <p><strong>Marks:</strong> ${student.marks}</p>
-            <p><strong>Class:</strong> ${student.class}</p>
-            <p><strong>Address:</strong> ${student.address}</p>
-        </div>
-    `).join("");
+    studentContainer.innerHTML = "";
 
+    for (let i = 0; i < studentList.length; i++) {
+
+        studentContainer.innerHTML += `
+            <div class="card">
+                <h3>${studentList[i].name}</h3>
+                <p><strong>Marks:</strong> ${studentList[i].marks}</p>
+                <p><strong>Class:</strong> ${studentList[i].class}</p>
+                <p><strong>Address:</strong> ${studentList[i].address}</p>
+            </div>
+        `;
+    }
 }
 
 displayStudents(students);
 
 search.addEventListener("input", function () {
 
-    const searchValue = this.value.toLowerCase();
+    let searchValue = search.value.toLowerCase();
 
-    const filteredStudents = students.filter(student =>
-        student.name.toLowerCase().includes(searchValue)
-    );
+    let filteredStudents = [];
+
+    for (let i = 0; i < students.length; i++) {
+
+        if (students[i].name.toLowerCase().includes(searchValue)) {
+            filteredStudents.push(students[i]);
+        }
+
+    }
 
     displayStudents(filteredStudents);
 
